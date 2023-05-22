@@ -234,7 +234,13 @@ def mainGame(movementInfo):
                     playerVelY = playerFlapAcc
                     playerFlapped = True
                     SOUNDS['wing'].play()
-
+            if event.type == MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    playerx +=50
+            if event.type == MOUSEBUTTONUP:
+                if event.button == 1:
+                    playerx -=50
+                    
         # check for crash here
         crashTest = checkCrash({'x': playerx, 'y': playery, 'index': playerIndex},
                                upperPipes, lowerPipes)
